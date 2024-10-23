@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feira Tecnologica 3 Quimica </title>
+    <style>
+        body {
+            background-image: url('/images/telainicial.png'); /* Substitua pela sua imagem */
+            background-size: cover; /* A imagem cobre toda a tela */
+            background-repeat: no-repeat; /* A imagem não se repete */
+            background-position: center; /* A imagem é centralizada */
+            height: 100vh; /* Ocupa toda a altura da janela */
+            margin: 0; /* Remove margens padrão */
+            display: flex; /* Flexbox para centralizar */
+            align-items: center; /* Centraliza verticalmente */
+            justify-content: center; /* Centraliza horizontalmente */
+            color: white; /* Cor do texto */
+            text-align: center; /* Centraliza o texto */
+        }
+      
+        .botao {
+            background-color: rgb(255, 255, 255); /* Cor de fundo do botão */
+            border: none; /* Sem borda */
+            padding: 15px 30px; /* Espaçamento interno */
+            font-size: 18px; /* Tamanho da fonte */
+            cursor: pointer; /* Muda o cursor ao passar */
+            text-decoration: none; /* Remove sublinhado */
+            border-radius: 5px; /* Bordas arredondadas */
+            transition: background-color 0.3s; /* Efeito de transição */
+            text-decoration: line-through;
+        }
+        .play-btn {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(145deg, #1e90ff, #63a4ff); /* Gradiente de cor */
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+            transition: all 0.3s ease;
+        }
+
+        .play-btn::before {
+            content: '';
+            position: absolute;
+            left: 40%;
+            top: 35%;
+            width: 0;
+            height: 0;
+            border-left: 48px solid white; /* Ícone de play com borda maior */
+            border-top: 28px solid transparent;
+            border-bottom: 28px solid transparent;
+        }
+
+        .play-btn:hover {
+            transform: scale(2.2); /* Aumenta o botão no hover */
+            box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.4); /* Sombra mais intensa no hover */
+        }
+
+        .play-btn:active {
+            transform: scale(1.1); /* Efeito menor quando pressionado */
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Sombra suave ao clicar */
+        }
+
+        .play-btn:focus {
+            outline: none;
+        }
+        .botao:hover {
+            background-color: rgba(255, 255, 255, 0.8); /* Efeito ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <a href="inicio.html" class="play-btn"></a>
+
+</body> 
+
+</html>

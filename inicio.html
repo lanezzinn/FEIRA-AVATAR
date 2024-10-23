@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Botões em Grade</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-image: url('images/Fundo.jpg'); /* Verifique o caminho da imagem */
+            background-size: cover; /* Para cobrir toda a área */
+            background-repeat: no-repeat; /* Não repetir a imagem */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .grid {
+            display: flex;
+            grid-template-columns: repeat(3, 100px);
+            grid-gap: 100px;
+        }
+
+        .botao {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            transition: transform 0.3s;
+            background-size: 100px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: transparent;
+        }
+
+        .botao:hover {
+            transform: scale(3.2); /* Efeito de hover */
+        }
+
+        /* Estilo da seção de descrição */
+        .secao-descricao {
+            display: none;
+            width: 300px;
+            margin-left: 20px;
+            padding: 20px;
+            border: 1px solid #00000081;
+            border-radius: 10px;
+            background-color: rgba(7, 51, 87, 0.8);
+        }
+
+        .secao-descricao.active {
+            display: block;
+        }
+
+        .secao-descricao h2 {
+            margin-top: 0;
+        }
+
+        .secao-descricao button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+        }
+
+        .secao-descricao button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, 100px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: repeat(1, 100px);
+            }
+        }
+
+        /* Imagens personalizadas para cada botão */
+        .botao1 { background-image: url('images/lane.png'); }
+        .botao2 { background-image: url('images/quezia.png'); }
+        .botao3 { background-image: url('images/luizaa.png'); }
+        .botao4 { background-image: url('images/julinha.png'); }
+        .botao5 { background-image: url('images/amandaalicia.png'); }
+        .botao6 { background-image: url('images/isas.png'); }
+        .botao7 { background-image: url('images/leon.png'); }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="grid">
+            <button class="botao botao1" onclick="mostrarSecao('secao1')">
+                
+            <button class="botao botao2" onclick="mostrarSecao('secao2')">
+                
+            </button>
+            <button class="botao botao3" onclick="mostrarSecao('secao3')">
+                
+            </button>
+            <button class="botao botao4" onclick="mostrarSecao('secao4')">
+                
+            </button>
+            <button class="botao botao5" onclick="mostrarSecao('secao5')">
+                
+            </button>
+            <button class="botao botao6" onclick="mostrarSecao('secao6')">
+                
+            </button>
+            <button class="botao botao7" onclick="mostrarSecao('secao7')">
+                
+            </button>
+        </div>
+
+        <!-- Seções de descrição -->
+        <div class="secao-descricao" id="secao1">
+            <h2>Biodigestor</h2>
+            <p>Aqui está uma descrição mais detalhada sobre o biodigestor. Explicação do funcionamento e outras informações relevantes.</p>
+            <button>Saiba Mais</button>
+        </div>
+
+        <div class="secao-descricao" id="secao2">
+            <h2>Canudo indicador de drogas</h2>
+            <p>Descrição sobre o projeto do canudo identificador de drogas. Explicação do conceito e das funcionalidades.</p>
+            <button>Saiba Mais</button>
+        </div>
+
+        <div class="secao-descricao" id="secao3">
+            <h2>Fertilizante</h2>
+            <p>Informações sobre o fertilizante e como ele pode ser utilizado para melhorar a produção agrícola.</p>
+            <button>Saiba Mais</button>
+        </div>
+
+        <div class="secao-descricao" id="secao4">
+            <h2>Julinha</h2>
+            <p>Detalhes sobre o projeto Julinha e seus impactos na comunidade. Descrição completa das atividades.</p>
+            <button>Saiba Mais</button>
+        </div>
+
+        <div class="secao-descricao" id="secao5">
+            <h2>Identificação e doseamento de formol em produtos alisantes capilares</h2>
+            <p>Explicação sobre o trabalho de Amanda Alicia e suas contribuições para o projeto.</p>
+            <button>Saiba Mais</button>
+        </div>
+
+        <div class="secao-descricao" id="secao6">
+            <h2>Isas</h2>
+            <p>Detalhes sobre o projeto Isas e como ele se destaca dentro das iniciativas sociais.</p>
+            <button>Saiba Mais</button>
+        </div>
+
+        <div class="secao-descricao" id="secao7">
+            <h2>Etanol de 2° geração</h2>
+            <p>Informações sobre a produção de etanol de 2° geração e seus benefícios ambientais.</p>
+            <button>Saiba Mais</button>
+        </div>
+    </div>
+
+    <script>
+        function mostrarSecao(secaoId) {
+            // Oculta todas as seções
+            var secoes = document.querySelectorAll('.secao-descricao');
+            secoes.forEach(function(secao) {
+                secao.classList.remove('active');
+            });
+
+            // Exibe a seção correspondente ao botão clicado
+            var secaoAtiva = document.getElementById(secaoId);
+            secaoAtiva.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
